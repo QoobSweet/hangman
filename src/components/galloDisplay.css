@@ -1,0 +1,14 @@
+.GalloDisplay-display {
+
+}
+
+.-imgContainer {
+    min-width: 300px;
+    min-height:300px;    
+}
+
+.GalloDisplay-failCount {
+    position: absolute;
+    left: 10px;
+
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import GalloDisplay from './galloDisplay.js'
+import GalloDisplay from './galloDisplay.js';
+import LetterSelector from './letterSelector.js';
 
 const Controller = () => {
     const rootName = 'Controller';
@@ -10,13 +11,15 @@ const Controller = () => {
     return ( 
         <div className = { rootName } >
             <GalloDisplay
-            /* 
-            declare props to be passed down here in html syntax  
-            '{}' allow for passing javascript variables 
-            */
-            failCount = {4}
+                /* 
+                declare props to be passed down here in html syntax  
+                '{}' allow for passing javascript variables 
+                */
+                failCount = {failCount}
 
-            /> 
+            />
+            <LetterSelector
+            />
         </div>
     )
 }

@@ -1,0 +1,30 @@
+TODO List:
+
+
+Enter Phrase
+- start with static phrase
+    - ability to enter Phrase
+- blank spaces to show approved letters in correct spot
+
+
+Alphabet
+- show letters
+- select letters
+- show selected letter appropriately
+- adjust failCount when wrong letter selected
+
+Gallo
++ implemented Images
++ Tied Displayed Image to failCount property passed down from controller
++ implemented maxFails
++ Displayed Guesses Remaining
+
+
+
+
+
+
+
+
+
+

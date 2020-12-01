@@ -17,7 +17,6 @@ function App() {
       </header>
 
 
-
       <Controller 
         //where property {options} will go in 'label={javascriptVariable}'
       />

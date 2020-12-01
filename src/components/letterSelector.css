@@ -1,0 +1,17 @@
+.LetterSelector {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 60vw;
+    margin: auto;
+    
+}
+
+.LetterSelector-alphabet {
+    display: flex;
+    margin: 10px;
+
+    font-size: 40px;
+    font-weight: bold;
+}
