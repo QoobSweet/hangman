@@ -34,14 +34,17 @@ const GalloDisplay = (props) => {
     const rootName = 'GalloDisplay';
     const maxFails = 8;
 
-    const [dispImage, setDispImage] = useState(null)
+    const [dispImage, setDispImage] = useState(null);
 
-
+    
 
     //activated only when props are updated/changed
+    // React hook -- has 2 parameters: function that is callecd and dependentcy 
     useEffect( () => {
-
+        //call set-State Hook to set dispImage to new image
+        //then immediately call a Component Update
         setDispImage(manParts[props.failCount]);
+
     }, [props.failCount])
     
 
@@ -54,8 +57,7 @@ const GalloDisplay = (props) => {
                 src = { dispImage }
                 alt = "HangmanImage"
                 onMouseDown = {() => {} }
-
-                testID = "sampleID" 
+                
             />
 
             <label 

@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
 import GalloDisplay from './galloDisplay.js';
 import LetterSelector from './letterSelector.js';
+import PhraseDisplay from './phraseDisplay.js';
 
 const Controller = () => {
     const rootName = 'Controller';
 
     const [failCount, setFailCount] = useState(0);
+    const [acceptedLetters, setAcceptedLetters] = useState([]);
+    
+    const acceptLetter = (letter) => {
+        let newArray = acceptedLetters
+        newArray.push(letter)
+        console.log('letter: ' + letter + ' was selected')
+        console.log(['setting acceptedLetters to: ', newArray])
+        setAcceptedLetters(newArray)
 
-
+    }
+    
     return ( 
         <div className = { rootName } >
             <GalloDisplay
@@ -18,7 +28,13 @@ const Controller = () => {
                 failCount = {failCount}
 
             />
+            
+            <PhraseDisplay 
+                acceptedLetters = {acceptedLetters}
+            />
+            
             <LetterSelector
+                letterAccept = {acceptLetter}
             />
         </div>
     )

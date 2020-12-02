@@ -5,13 +5,15 @@
     justify-content: center;
     max-width: 60vw;
     margin: auto;
-    
+    margin-top: 30px;
 }
 
 .LetterSelector-alphabet {
     display: flex;
     margin: 10px;
+    font-size: 20px;
+}
 
-    font-size: 40px;
-    font-weight: bold;
+.-selectedLetter {
+    color: rgb(201, 201, 201);
 }

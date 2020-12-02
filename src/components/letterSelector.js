@@ -4,21 +4,26 @@ import './letterSelector.css'
 const LetterSelector = (props) => {
     const rootName = 'LetterSelector';
 
-
-
-
-const alphabet = [
-    "A", "B", "C", "D", "E", 
-    "F", "G", "H", "I", "J", 
-    "K", "L", "M", "N", "O", 
-    "P", "Q", "R", "S", "T", 
-    "U", "W", "X", "Y", "Z"
-]
-
+    const alphabet = [
+        "A", "B", "C", "D", "E", 
+        "F", "G", "H", "I", "J", 
+        "K", "L", "M", "N", "O", 
+        "P", "Q", "R", "S", "T", 
+        "U", "W", "X", "Y", "Z"
+    ]
+    
+    const selectLetter = (event) =>{
+        if (!event.target.className.includes(' -selectedLetter')) {
+            event.target.className += ' -selectedLetter';
+        };
+        
+        
+        props.letterAccept(event.target.textContent)
+    }
+    
     const generateLetterLabel = (letter) => {
-
         return (
-        <label className = {rootName + '-alphabet'} >
+        <label className={rootName + '-alphabet'} onClick={selectLetter}>
             {letter}
         </label>
         )
@@ -35,6 +40,7 @@ const alphabet = [
         }
         return letterLabels;
     }
+
 
 
 

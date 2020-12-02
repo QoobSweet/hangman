@@ -1,0 +1,26 @@
+.PhraseDisplay {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    height: 100px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.PhraseDisplay-guessedLetterDisp {
+    width: 40px;
+    height: 55px;
+    margin: auto;
+    border-bottom: black;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.PhraseDisplay-emptyPhraseSpace {
+    width: 20px;
+    height: 30px;
+    margin: auto;
+    border-bottom: unset;
+}
