@@ -36,17 +36,33 @@ const GalloDisplay = (props) => {
 
     const [dispImage, setDispImage] = useState(null);
 
-    
+    // Create a function, getGuessesRemaining, that will return the value of the guesses remaining upon invokation. 
+    const getGuessesRemaining = () => {
+        return maxFails - props.failCount;
+    };
 
     //activated only when props are updated/changed
     // React hook -- has 2 parameters: function that is callecd and dependentcy 
     useEffect( () => {
+        //test if game is over or not; if not, proceed
+            
         //call set-State Hook to set dispImage to new image
         //then immediately call a Component Update
-        setDispImage(manParts[props.failCount]);
 
-    }, [props.failCount])
+        // if guesses remaining is greater than 0,execute setDispImage()
+       
+        if (!props.isGameOver) {
+            if(maxFails - props.failCount >= 0) {
+                setDispImage(manParts[props.failCount]);    
+            } else {
+                props.setIsGameOver(true)    
+            }   
+        };
+    }, [props, props.failCount])
     
+
+
+
 
 
     return ( 
@@ -63,7 +79,7 @@ const GalloDisplay = (props) => {
             <label 
                 className={ rootName + '-failCount'}
             >
-                {'Guesses Remaining: ' + (maxFails - props.failCount)}
+                {'Guesses Remaining: ' + getGuessesRemaining()}
             </label>
         </div>
     )

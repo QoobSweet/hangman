@@ -13,19 +13,21 @@ const LetterSelector = (props) => {
     ]
     
     const selectLetter = (event) =>{
-        if (!event.target.className.includes(' -selectedLetter')) {
-            event.target.className += ' -selectedLetter';
-        };
         
-        
-        props.letterAccept(event.target.textContent)
+        if(props.isGameOver === false ){
+            if (!event.target.className.includes(' -selectedLetter')) {
+                event.target.className += ' -selectedLetter';
+            };
+            props.letterAccept(event.target.textContent)
+        }
     }
+
     
-    const generateLetterLabel = (letter) => {
+    const generateLetterLabel = (letter, i) => {
         return (
-        <label className={rootName + '-alphabet'} onClick={selectLetter}>
-            {letter}
-        </label>
+            <label className={rootName + '-alphabet'} onClick={selectLetter} key={'letter_' +alphabet[i]} >
+                {letter}
+            </label>
         )
     }
 
@@ -35,7 +37,7 @@ const LetterSelector = (props) => {
 
         for(let i = 0; i < alphabet.length; i++){
           letterLabels.push(
-              generateLetterLabel(alphabet[i])
+              generateLetterLabel(alphabet[i], i)
             );
         }
         return letterLabels;
